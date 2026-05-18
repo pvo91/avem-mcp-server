@@ -1,0 +1,11 @@
+{
+  "_note": "Auto-managed by scripts/sync-from-jarvis-strategy.sh — run --accept after manually curating JSON.",
+  "updated_at": "2026-05-18T10:37:34Z",
+  "sources": {
+    "second-brain-documents/strategy/consulting-services.md": "fb3757f1d5a8370878ee84b8505ae2e183de5b2127de5ec05b56611aeb896902",
+    "second-brain-documents/strategy/case-study-25-agents.md": "6b53e79c4836e22e2ae3e363507a7e4ef91559523635e6927ec624bdde29be32",
+    "second-brain-documents/strategy/walkthrough-marco-franco.md": "f4c2c11be844e6da096fbd30dab54a730705eb04a0ddb0f959fc2dcfcf7ee2b9",
+    "second-brain-documents/strategy/avem-strategy-2026.md": "054415011061d70a3846662dd0e4ea32e161197a3dc1442e466f0b34728f2bb8",
+    "MISSION.md": "3451c55a903f3219d7d152ac40fc06669b42cbc46b5fcf552f70fc165841d08c"
+  }
+}

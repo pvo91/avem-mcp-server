@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev --port 8787",
+    "predeploy": "bash scripts/sync-from-jarvis-strategy.sh",
     "deploy": "wrangler deploy",
+    "predeploy:production": "bash scripts/sync-from-jarvis-strategy.sh",
     "deploy:production": "wrangler deploy --env production",
     "sync": "bash scripts/sync-from-jarvis-strategy.sh",
+    "sync:accept": "bash scripts/sync-from-jarvis-strategy.sh --accept",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
