@@ -1,0 +1,42 @@
+name = "avem-mcp-server"
+main = "src/index.ts"
+compatibility_date = "2026-05-18"
+compatibility_flags = ["nodejs_compat"]
+
+# Free Tier: 100k requests/day, 10ms CPU per request.
+# Bumps automatic if needed (we won't hit it on v1).
+
+[observability]
+enabled = true
+
+# Production environment binds custom domain.
+# DNS-CNAME `mcp.avemhq.com` must point to <workers-subdomain> first,
+# then Custom Domain via Cloudflare Dashboard -> Workers -> Triggers.
+[env.production]
+name = "avem-mcp-server"
+routes = [
+  { pattern = "mcp.avemhq.com/*", custom_domain = true }
+]
+
+# Secrets — set via `wrangler secret put` (NOT committed):
+#   wrangler secret put BEEHIIV_API_KEY --env production
+#   wrangler secret put GITHUB_TOKEN --env production
+#
+# 1Password lookups (per Sprint 1 Phase A disambiguation):
+#   BEEHIIV_API_KEY: TBD — choose 1 of 3 items
+#     - 2jh77itpnf7hi663pfrwrjrxza (Jarvis Beehiiv API Key, Vault Employee)
+#     - 3f4ftl4fcdaarmlgxzldtqpmoe (Beehiiv)
+#     - lnbknxdm63m2rygbhexk6ebs5a (Beehiiv (alt))
+#     Test which is the active REST API V2 key via curl GET /publications.
+#   GITHUB_TOKEN: TBD — choose 1 of multiple items
+#     - bifh7nwnwhtg6yk24uczsdiqqa (GitHub Personal Access Token)
+#     - d362eva25suddjbkahtq6dlpyu (Github. Jarvis-Bot. Personal Access Tokens)
+#     Scope: public_repo (read-only is enough; we only need rate-limit-bump).
+
+[vars]
+# Non-secret public config.
+AVEM_PRIMARY_DOMAIN = "avemhq.com"
+AVEM_BRAND_TAGLINE = "Systems over headcount"
+BEEHIIV_PUBLICATION_ID = "pub_72eb5446-bb81-4a10-9040-84076e4e5283"
+GITHUB_USERNAME = "pvo91"
+CACHE_TTL_SECONDS = "300"

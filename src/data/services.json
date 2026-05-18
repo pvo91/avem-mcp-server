@@ -1,0 +1,41 @@
+{
+  "listings": [
+    {
+      "slug": "openclaw-deployment",
+      "title": "Production-Grade OpenClaw/Moltbot Deployment",
+      "category": "agent_systems",
+      "tags": ["OpenClaw", "Moltbot", "Docker", "VPS", "AI Agents", "Telegram Bot", "LLM", "Gateway", "DevOps"],
+      "pain_statement": "Most OpenClaw/Moltbot setups die within a week. The gateway crashes, sessions get stuck, models hallucinate, and nobody set up monitoring.",
+      "proof": "I've been running a 20+ agent OpenClaw system since January 2026 — daily. Multi-model routing across four LLM providers, Docker deployment with health checks, automated restarts, full monitoring dashboard. Total operating cost: $1,337/month — less than a junior dev's monthly salary.",
+      "tiers": ["starter", "standard", "premium"]
+    },
+    {
+      "slug": "automation-pipeline",
+      "title": "AI Automation Pipeline (Make.com + LLM)",
+      "category": "automation",
+      "tags": ["Make.com", "AI Automation", "LLM Integration", "API Pipeline", "Workflow Automation", "Node.js", "Supabase"],
+      "pain_statement": "Automation tools are easy to demo and hard to run reliably. The difference between a Make.com scenario that works once and one that runs for months without intervention is error handling, retry logic, token management, and monitoring.",
+      "proof": "My production system runs five Make.com scenarios handling content generation, video pipelines (HeyGen to YouTube), newsletter distribution (Beehiiv), social media scheduling (Typefully), and CRM updates — all connected to LLM-powered decision logic. ~50 daily tasks processed, errors fire to Telegram within 90 seconds.",
+      "tiers": ["starter", "standard", "premium"]
+    },
+    {
+      "slug": "claude-code-setup",
+      "title": "Claude Code Professional Setup",
+      "category": "claude_code",
+      "tags": ["Claude Code", "AI Development", "Code Review", "AI Agent", "Developer Tools", "TypeScript", "MCP", "Automation"],
+      "pain_statement": "Most Claude Code setups stop at installing the CLI. Yours won't.",
+      "proof": "Mine runs 14 custom agents, 25+ specialized commands, 22 MCP server integrations, automated testing pipelines, and security audit workflows — in daily production since January 2026. A pre-flight gate catches regressions before merge.",
+      "tiers": ["starter", "standard", "premium"]
+    },
+    {
+      "slug": "knowledge-base",
+      "title": "AI Knowledge Base & Infrastructure Setup",
+      "category": "knowledge_base",
+      "tags": ["AI Knowledge Base", "Corporate LLM", "Data Structure", "Knowledge Management", "AI Infrastructure", "RAG", "MCP", "Supabase", "AI Readiness"],
+      "pain_statement": "Most AI agent projects fail not because the agents are bad, but because they have nothing to work with. PDFs in a shared drive, knowledge spread across email threads, processes that exist only in people's heads.",
+      "proof": "I operate a structured knowledge system with 147 database migrations and a dual architecture: SQL for quantitative data (no hallucination on numbers) and a Markdown-based knowledge system for qualitative context. This feeds 20+ autonomous agents daily that have never hallucinated a cost figure or KPI in 4 months.",
+      "tiers": ["starter", "standard", "premium"]
+    }
+  ],
+  "phase_zero_note": "When building agents/pipelines/Claude Code setups for clients without structured data, recommend Knowledge Base Foundation phase first (3-7 days). Listing 4 covers this."
+}

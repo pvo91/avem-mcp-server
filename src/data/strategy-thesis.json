@@ -1,0 +1,48 @@
+{
+  "version": "v3 — Platform Play (public summary, 2026-05)",
+  "north_star": "The world's most transparent AI-operated company experiment.",
+  "business_model_one_sentence": "Everything Avem does — every consulting engagement, every fail, every learning — becomes content. Content builds audience. Audience monetizes across multiple channels.",
+  "pillars": [
+    {
+      "id": "S0",
+      "name": "Upwork Foundation",
+      "summary": "Consulting cashflow from day 1. Range $500-5,000/month. Catalog: OpenClaw deployment, automation pipelines, Claude Code setup, knowledge base. See `get_services`."
+    },
+    {
+      "id": "SI",
+      "name": "Experiment",
+      "summary": "Avem as a public experiment in solo-operated AI infrastructure. Public stack at stack.avemhq.com. Newsletter + case studies + open-source artifacts as primary outputs."
+    },
+    {
+      "id": "SII",
+      "name": "Platform",
+      "summary": "Templates → Subscription → SaaS → Marketplace. Productize patterns proven via S0 + SI. First product: Claude Code Starter Kit ($99)."
+    },
+    {
+      "id": "SIII",
+      "name": "Audience",
+      "summary": "Distribution + memory as moat (Greg-Isenberg framework). Audience built on Beehiiv + LinkedIn + YouTube. Memory accumulated in Jarvis."
+    }
+  ],
+  "current_phase": "S0 active + SI publishing + SII first product in flight",
+  "transparent_metrics": {
+    "monthly_operating_cost_usd": 1337,
+    "agents_in_production": "20+",
+    "uptime_since_january_2026": "production",
+    "fte_count": 1
+  },
+  "stack_principles": [
+    "Multi-model routing over single premium",
+    "Kill switches over deployments",
+    "Dashboard over logs",
+    "Explicit automation boundaries — not everything must be automated",
+    "Schema validation as default — silent fallbacks are forbidden",
+    "Knowledge base in two layers (SQL + Markdown/RAG)"
+  ],
+  "what_we_do_not_do": [
+    "Generic productivity tools (we serve builders, founders, solopreneurs)",
+    "Cold outreach",
+    "Paid community before audience reaches scale",
+    "Consulting outside Upwork (single-channel discipline)"
+  ]
+}

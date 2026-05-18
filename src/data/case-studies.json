@@ -1,0 +1,62 @@
+{
+  "primary": {
+    "title": "How I Run a 20+ Agent AI Company for $1,337/Month",
+    "subject": "Avem Investment GmbH",
+    "period": "Q1 2026 — present",
+    "constraints": [
+      "Sub-$1,500/month total cost",
+      "GDPR-compliant (Swiss/EU)",
+      "Fully self-hosted where possible",
+      "Reliable enough to run unattended overnight"
+    ],
+    "architecture": {
+      "infrastructure": "Single Hetzner VPS (4 vCPU, 8GB RAM, $8/month). OpenClaw/Moltbot gateway inside Docker. Custom Next.js dashboard (22 pages, Supabase backend) with real-time visibility into every agent, cost, and workflow.",
+      "agent_domains": [
+        "C-Suite Swarm (CMO, CDO, COO, CSO, CTO, CPO, CRO) — daily strategy reports, market analysis, risk assessment",
+        "Content Pipeline (Generator, Enricher, Scout, Autopsy Analyst) — newsletter drafts, social posts, video scripts",
+        "Dev-Bridge (Task Picker, Code Agent, Pre-Flight, PR Builder) — autonomous development with quality gates",
+        "Voice Bridge (Call Handler, Calendar Agent, Booking Agent) — inbound voice calls, scheduling, callbacks",
+        "Operations (Retention Agent, Heartbeat Monitor, Cost Tracker, Notification Router) — GDPR cleanup, system health"
+      ],
+      "multi_model_routing": "MiniMax M2.7 (45%, default + standups), Kimi K2.6 (30%, swarm sub-agents), GLM 5.1 (15%, fact-checking), Haiku/Sonnet/Opus (10%, fallback). Saves 40-60% vs single premium model.",
+      "integrations": "5 Make.com scenarios connecting Beehiiv, Typefully, HeyGen, YouTube, Twilio/ElevenLabs. Cal.com for scheduling, Stripe for payments."
+    },
+    "monthly_cost_breakdown": {
+      "HeyGen": 99,
+      "Runway": 96,
+      "ElevenLabs": 22,
+      "Typefully": 19,
+      "LLM tokens": 25,
+      "Make.com": 9,
+      "Hetzner VPS": 8,
+      "Twilio": 4,
+      "Supabase": 0,
+      "Other services": 55,
+      "Total approx": 1337
+    },
+    "system_metrics": {
+      "features": 74,
+      "kill_switches": 44,
+      "automated_tests": 1205,
+      "database_migrations": 147,
+      "dashboard_pages": 22,
+      "gdpr_cleanup_routines": 7
+    },
+    "key_learnings": [
+      "Multi-model routing is the single biggest cost lever. Running everything on Opus or GPT-4 would cost 3-5× more.",
+      "Every feature needs a kill switch. 'Turn it off' must be a 1-second operation, not a deployment.",
+      "You need a dashboard, not just logs. Logs tell you what happened. A dashboard tells you what is happening.",
+      "Define automation boundaries explicitly. Voice + calendar: 90% automated. Community engagement: 0%, intentionally.",
+      "JSON output from LLMs is fragile. Defensive extraction + schema validation are mandatory.",
+      "Your knowledge base needs two layers, not one. SQL for quantitative (no hallucinated numbers), Markdown/RAG for qualitative context."
+    ],
+    "results_since_january_2026": [
+      "Daily operations: 7 C-Suite agents produce strategy reports every weekday morning",
+      "Content pipeline: automated newsletter drafts, social posts, AI-generated video with human approval gates",
+      "Autonomous development: Dev-Bridge picks tasks, writes code, runs pre-flight checks, opens PRs",
+      "Voice automation: inbound calls handled by AI with ElevenLabs synthesis, calendar integration, callback tracking",
+      "Compliance: GDPR-compliant data retention with automated cleanup, documented deletion procedures"
+    ],
+    "human_oversight_per_day_minutes": 30
+  }
+}

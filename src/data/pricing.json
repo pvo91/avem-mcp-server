@@ -1,0 +1,82 @@
+{
+  "openclaw-deployment": {
+    "starter": {
+      "price_usd": 250,
+      "delivery_days": 2,
+      "includes": ["VPS provisioning", "Docker + Gateway", "Telegram bot setup", "1 custom skill", "Documentation"],
+      "outcome": "Your first agent live and responding in Telegram by day 3, on infrastructure that survives past the first month."
+    },
+    "standard": {
+      "price_usd": 750,
+      "delivery_days": 5,
+      "includes": ["Starter + Multi-Model Routing (4 LLM providers)", "3 custom skills", "Monitoring setup", "14-day support"],
+      "outcome": "Multi-model agents routing ~50% cheaper than single-LLM setups, with 3 production-grade skills running daily tasks."
+    },
+    "premium": {
+      "price_usd": 2000,
+      "delivery_days": 10,
+      "includes": ["Standard + Swarm Agents", "Custom Dashboard", "Full third-party integrations", "30-day support"],
+      "outcome": "A full operational dashboard like the one I run myself — agents, costs, and integrations visible in real-time."
+    }
+  },
+  "automation-pipeline": {
+    "starter": {
+      "price_usd": 300,
+      "delivery_days": 3,
+      "includes": ["1 automation workflow", "1 third-party integration", "Documentation"],
+      "outcome": "One workflow handling your most painful manual process, retrying on failure, alerting you only when it can't recover."
+    },
+    "standard": {
+      "price_usd": 800,
+      "delivery_days": 5,
+      "includes": ["3 connected workflows", "Multi-integration setup", "Error handling + retry logic"],
+      "outcome": "Three connected workflows with error handling that catches issues ~90 seconds before your customers do."
+    },
+    "premium": {
+      "price_usd": 2500,
+      "delivery_days": 10,
+      "includes": ["Full pipeline", "Custom decision logic", "Monitoring dashboard (Next.js + Supabase)", "30-day support"],
+      "outcome": "Full pipeline + monitoring dashboard showing every execution, failure, and retry — the same visibility I use for my own ops."
+    }
+  },
+  "claude-code-setup": {
+    "starter": {
+      "price_usd": 1000,
+      "delivery_days": 3,
+      "includes": ["Claude Code install", "Project-specific CLAUDE.md", "3 custom skills", "MCP server setup", "Documentation"],
+      "outcome": "Your team writes its first AI-assisted PR by day 4 with project-specific rules in place."
+    },
+    "standard": {
+      "price_usd": 2500,
+      "delivery_days": 5,
+      "includes": ["Starter + 8 custom agents", "Hooks + rules", "CI/CD integration", "14-day support"],
+      "outcome": "Every PR goes through AI quality gates (code review, security, tests) before merge."
+    },
+    "premium": {
+      "price_usd": 5000,
+      "delivery_days": 10,
+      "includes": ["Standard + Full Environment (14 agents, 25+ skills, 22 MCP servers)", "Team onboarding", "30-day support"],
+      "outcome": "The full environment I run myself, customized to your stack, with team onboarding so your devs use it on day one."
+    }
+  },
+  "knowledge-base": {
+    "starter": {
+      "price_usd": 500,
+      "delivery_days": 3,
+      "includes": ["AI Readiness Audit (data landscape, gap analysis, structure plan)", "Written report with prioritized action items"],
+      "outcome": "You know what to fix before spending another dollar on agents that won't have anything to work with."
+    },
+    "standard": {
+      "price_usd": 1500,
+      "delivery_days": 7,
+      "includes": ["Starter + Knowledge Base Build (up to 50 documents restructured)", "1 agent/chatbot connected to KB", "API/MCP access layer", "Onboarding session"],
+      "outcome": "Up to 50 documents agent-accessible, plus your first agent answering questions from your data — not from a generic LLM."
+    },
+    "premium": {
+      "price_usd": 4000,
+      "delivery_days": 14,
+      "includes": ["Standard + Corporate LLM Workspace (Claude Code with custom skills, MCP servers)", "Dual Architecture (SQL + RAG)", "Full Agent Infrastructure", "Team Training (up to 5 people)", "30-day support"],
+      "outcome": "Dual architecture live in your environment, agents that don't hallucinate numbers, team trained — the same foundation I use to run 20+ agents on $1,337/month."
+    }
+  }
+}

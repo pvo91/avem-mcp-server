@@ -1,0 +1,25 @@
+{
+  "founder": {
+    "name": "Patric Vogel",
+    "role": "Founder & CEO, Avem Investment GmbH",
+    "location": "Chur, Switzerland",
+    "bio": "Solo operator running a 20+ agent AI company since January 2026. Builder of Jarvis — production AI infrastructure that handles strategy, content, voice calls, and autonomous code development. Brand: Systems over headcount."
+  },
+  "company": {
+    "name": "Avem Investment GmbH",
+    "tagline": "Systems over headcount.",
+    "primary_domain": "avemhq.com",
+    "short_alias": "avem.sh",
+    "country": "Switzerland",
+    "founded": "Q4 2025"
+  },
+  "mission": "Prove that one person with AI agents can outperform a 10-person company. Ship products, generate revenue, publish content, manage operations — all autonomously. Zero payroll. Infinite leverage.",
+  "stack_overview": "20+ agents, $1,337/month operating cost, 4 LLM providers (Claude/GPT/Kimi/MiniMax), Docker + Hetzner VPS + Cloudflare edge + Supabase backend + Make.com pipelines. Production since January 2026.",
+  "first_contact": "https://cal.com/jarvis-xlrw3p",
+  "links": {
+    "website": "https://avemhq.com",
+    "public_stack": "https://stack.avemhq.com",
+    "mcp_server": "https://mcp.avemhq.com",
+    "case_study": "Run `get_case_studies` for the 20+ agent / $1,337/month breakdown."
+  }
+}

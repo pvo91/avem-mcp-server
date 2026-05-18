@@ -1,0 +1,24 @@
+{
+  "_note": "Static fallback. The live manifest is rendered dynamically at https://mcp.avemhq.com/.well-known/mcp.json — this static copy is for repo discovery + tooling that does not hit the Worker.",
+  "name": "avem-mcp-server",
+  "version": "0.1.0",
+  "description": "Avem Investment GmbH MCP-Server. Walk-the-Talk for 'Systems over headcount' brand.",
+  "endpoint": "https://mcp.avemhq.com/mcp",
+  "transport": "streamable-http",
+  "protocol_version": "2025-03-26",
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    { "name": "get_about", "description": "Avem founder bio, mission, tagline." },
+    { "name": "get_services", "description": "Service catalog (4 listings)." },
+    { "name": "get_pricing", "description": "Pricing tier details per service." },
+    { "name": "get_case_studies", "description": "Anonymized case studies." },
+    { "name": "get_strategy_thesis", "description": "Public-safe Avem Strategy v3 summary." },
+    { "name": "book_consultation", "description": "Cal.com booking URL + hint." },
+    { "name": "get_content", "description": "Recent Beehiiv newsletter posts (5min cache)." },
+    { "name": "get_open_source", "description": "Public GitHub repos (5min cache)." }
+  ]
+}

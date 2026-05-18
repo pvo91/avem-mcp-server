@@ -1,0 +1,12 @@
+{
+  "primary_url": "https://cal.com/jarvis-xlrw3p",
+  "events": {
+    "consultation_15min": "https://cal.com/jarvis-xlrw3p/jarvis-15",
+    "consultation_30min": "https://cal.com/jarvis-xlrw3p/jarvis-30"
+  },
+  "urgency_hints": {
+    "this_week": "For urgent needs (production issue, time-sensitive launch), book a 15-min same-week slot. I prioritize these in my calendar.",
+    "flexible": "For exploratory conversations (scope of work, fit assessment), the 30-min slot gives space to map your situation. Slots typically 1-2 weeks out."
+  },
+  "first_step_hint": "Bring a concrete problem (not 'tell me about Claude Code'). The call is a 15-min screen share where I show my running system as it maps to your situation, then we decide if a paid engagement makes sense."
+}
