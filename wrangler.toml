@@ -15,8 +15,19 @@ enabled = true
 [env.production]
 name = "avem-mcp-server"
 routes = [
-  { pattern = "mcp.avemhq.com/*", custom_domain = true }
+  { pattern = "mcp.avemhq.com", custom_domain = true }
 ]
+
+# vars are NOT inherited from top-level by named environments — must be
+# repeated here (Cloudflare wrangler behavior). Without this block the
+# production deploy would have BEEHIIV_PUBLICATION_ID / GITHUB_USERNAME
+# undefined -> get_content + get_open_source broken.
+[env.production.vars]
+AVEM_PRIMARY_DOMAIN = "avemhq.com"
+AVEM_BRAND_TAGLINE = "Systems over headcount"
+BEEHIIV_PUBLICATION_ID = "pub_72eb5446-bb81-4a10-9040-84076e4e5283"
+GITHUB_USERNAME = "pvo91"
+CACHE_TTL_SECONDS = "300"
 
 # Secrets — set via `wrangler secret put` (NOT committed):
 #   wrangler secret put BEEHIIV_API_KEY --env production
