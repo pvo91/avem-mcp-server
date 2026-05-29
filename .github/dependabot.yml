@@ -1,0 +1,30 @@
+version: 2
+updates:
+  # npm deps (wrangler, hono, @modelcontextprotocol/sdk, zod, etc.).
+  # Project-local deps are NOT covered by the global `update-all` alias
+  # (that handles brew / npm-global / bun / claude-cli only) — Dependabot
+  # is the canonical auto-update path for per-repo dependencies.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    # Pin-discipline: review SDK/runtime majors manually (MCP protocol +
+    # Cloudflare Workers runtime can carry breaking changes).
+    ignore:
+      - dependency-name: "@modelcontextprotocol/sdk"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "wrangler"
+        update-types: ["version-update:semver-major"]
+  # GitHub Actions (if/when workflows are added).
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
