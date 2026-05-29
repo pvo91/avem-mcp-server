@@ -7,3 +7,7 @@ dist/
 coverage/
 .env
 .env.local
+
+# Local dev-only cross-repo sync (contains local paths — never public)
+.sync-state.json
+scripts/sync-from-jarvis-strategy.sh

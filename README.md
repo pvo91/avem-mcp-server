@@ -42,10 +42,7 @@ npm install
 wrangler secret put BEEHIIV_API_KEY --env production
 wrangler secret put GITHUB_TOKEN --env production
 
-# 3. Sync curated content from Jarvis strategy folder
-npm run sync
-
-# 4. Local dev
+# 3. Local dev
 npm run dev   # Listens on http://localhost:8787/mcp
 
 # 5. Deploy
@@ -90,19 +87,11 @@ npx @modelcontextprotocol/inspector https://mcp.avemhq.com/mcp
 
 ## Data Source
 
-Statische Tool-Daten in `src/data/*.json` werden via `scripts/sync-from-jarvis-strategy.sh` aus dem Jarvis-Strategy-Folder kuratiert (manual trigger pre-deploy). Single-Source-of-Truth bleibt Jarvis (`second-brain-documents/strategy/`).
-
-Live-Daten (Beehiiv, GitHub) werden direkt von den jeweiligen APIs gequeriet, mit 5-Min-Cache via Cloudflare Cache API.
+Statische Tool-Daten leben kuratiert in `src/data/*.json` (build-time gebündelt, public-safe). Live-Daten (Beehiiv-Newsletter, GitHub-Repos) werden zur Laufzeit von den jeweiligen APIs gequeriet, mit 5-Min-Cache via Cloudflare Cache API (best-effort — ein Cache-Fehler degradiert nie den Tool-Call).
 
 ## Architektur-Entscheidung: Warum Cloudflare Workers statt Vercel?
 
-Vercel-Webseite-Repo ist Vite-SPA, kein Next.js. Vercels offizielles `mcp-handler@1.1.0` braucht Next.js als peer. Drei Pfade evaluiert (Plan v2):
-
-1. ❌ **Vercel-Vite + Plain Functions:** Mehr Custom-Code, MCP-Protocol manuell implementieren
-2. ❌ **Vercel Separates Next.js Mini-Repo:** Zweites Vercel-Project, mehr Tooling
-3. ✅ **Cloudflare Workers:** DNS ist eh Cloudflare (`avemhq.com` Zone), `iceener/streamable-mcp-server-template` als Pattern, edge-Latenz weltweit, free tier reicht für v1
-
-Details: `~/.claude/plans/joyful-seeking-gadget.md` Korrektur 1.
+Vercels offizielles `mcp-handler` braucht Next.js als peer-dependency — passt nicht in ein Vite-SPA-Setup. Cloudflare Workers ist die saubere Alternative: DNS läuft ohnehin über Cloudflare, Streamable HTTP ist nativ, edge-Latenz weltweit, free tier deckt v1 (100k req/Tag).
 
 ## Walk-the-Talk
 

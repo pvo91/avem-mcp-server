@@ -30,19 +30,8 @@ GITHUB_USERNAME = "pvo91"
 CACHE_TTL_SECONDS = "300"
 
 # Secrets — set via `wrangler secret put` (NOT committed):
-#   wrangler secret put BEEHIIV_API_KEY --env production
-#   wrangler secret put GITHUB_TOKEN --env production
-#
-# 1Password lookups (per Sprint 1 Phase A disambiguation):
-#   BEEHIIV_API_KEY: TBD — choose 1 of 3 items
-#     - 2jh77itpnf7hi663pfrwrjrxza (Jarvis Beehiiv API Key, Vault Employee)
-#     - 3f4ftl4fcdaarmlgxzldtqpmoe (Beehiiv)
-#     - lnbknxdm63m2rygbhexk6ebs5a (Beehiiv (alt))
-#     Test which is the active REST API V2 key via curl GET /publications.
-#   GITHUB_TOKEN: TBD — choose 1 of multiple items
-#     - bifh7nwnwhtg6yk24uczsdiqqa (GitHub Personal Access Token)
-#     - d362eva25suddjbkahtq6dlpyu (Github. Jarvis-Bot. Personal Access Tokens)
-#     Scope: public_repo (read-only is enough; we only need rate-limit-bump).
+#   wrangler secret put BEEHIIV_API_KEY --env production   # Beehiiv REST API V2 key
+#   wrangler secret put GITHUB_TOKEN --env production       # GitHub PAT (public_repo scope; rate-limit bump)
 
 [vars]
 # Non-secret public config.
