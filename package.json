@@ -28,7 +28,7 @@
     "prettier": "3.6.2",
     "typescript": "5.7.3",
     "vitest": "4.1.5",
-    "wrangler": "4.95.0"
+    "wrangler": "4.118.0"
   },
   "engines": {
     "node": ">=20.0.0"
