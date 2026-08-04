@@ -15,8 +15,8 @@
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts' '*.md' '*.json'"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.29.0",
-    "hono": "4.12.28",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "hono": "4.12.34",
     "zod": "3.25.49"
   },
   "devDependencies": {
