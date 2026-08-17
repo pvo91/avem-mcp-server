@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "project_slug": "avem-mcp-server",
+  "db_sync": false,
+  "retention_days": 180,
+  "fingerprint_version": "v1",
+  "created_at": "2026-07-10T09:15:23Z",
+  "created_by": "findings-ingest.js",
+  "fingerprint_algo": "sha256(file_path + ':' + (rule_id || category) + ':' + normalized_snippet)"
+}

@@ -1,0 +1,47 @@
+{
+  "run_id": "6071fe45-b5c3-4ef0-b48c-ca7d1c26b9b0",
+  "skill": "security-audit",
+  "scope": "tiefen-check-welle-1 vuln-triage",
+  "finished_at": "2026-07-10T09:15:23Z",
+  "findings": [
+    {
+      "severity": "medium",
+      "category": "devex-ops",
+      "rule_id": "unpushed-fix",
+      "file_path": "package.json",
+      "title": "Der Fix für alle Runtime-Vulnerabilities liegt seit Wochen unpushed auf einem lokalen Branch",
+      "description": "Der deployte Worker entspricht main mit hono 4.12.19. Auf dem lokalen Branch fix/hono-4.12.28 liegt Commit 4cb9fd7, der hono auf 4.12.28 hebt. Auf diesem Stand meldet npm audit --omit=dev null Vulnerabilities: alle Runtime-Deps (hono, MCP-SDK, zod) sind sauber. Der Branch existiert nicht auf origin, ein Disk-Verlust würde den Fix vernichten, und der Worker läuft weiter auf dem verwundbaren Stand.",
+      "evidence": "git ls-remote zeigt den Branch nicht. npm audit --omit=dev auf dem Branch-Stand: 0. Auf main-Stand: 6 high. wrangler.toml bindet die Custom Domain mcp.avemhq.com im Production-Environment.",
+      "recommendation": "Branch pushen (sofortiges Backup), dann nach main mergen und deploy:production. Danach die Dependabot-PR fuer hono 4.12.23 schliessen, sie ist ueberholt.",
+      "confidence": "high",
+      "estimated_effort": "low",
+      "fingerprint": "0b55d38bc2a5f3024cd0a3450c0fc5358a3596c8b907fbf90ce7dc393d553598"
+    },
+    {
+      "severity": "low",
+      "category": "security",
+      "rule_id": "npm-vuln",
+      "file_path": "package-lock.json",
+      "title": "Alle 7 verbleibenden Vulnerabilities sind Dev-Tooling und landen nie im Worker-Bundle",
+      "description": "Die wrangler-Kette (undici, miniflare, ws, esbuild) stellt 4 high plus 1 low, vite via vitest 1 high (Windows-only Dev-Server-Szenarien), js-yaml via eslint 1 moderate. Das Worker-Bundle enthaelt nur hono, zod und das MCP-SDK. npm audit fix aendert nur js-yaml, weil wrangler und vitest save-exact gepinnt sind.",
+      "evidence": "npm audit --omit=dev auf dem Branch-Stand ergibt 0. npm audit fix --dry-run beruehrt ausschliesslich js-yaml 4.1.1 auf 4.3.0.",
+      "recommendation": "wrangler auf 4.110.0 und vitest auf 4.1.7 heben (beide ohne SemVer-Major laut Advisory). Die Major-Bumps eslint 10 und @types/node 25 getrennt entscheiden.",
+      "confidence": "high",
+      "estimated_effort": "low",
+      "fingerprint": "bd99d60711056263cc1de55bd4a01ac5841fd8b4edc74abf1553e7e7ce0195ad"
+    },
+    {
+      "severity": "low",
+      "category": "devex-ops",
+      "rule_id": "broken-lint",
+      "file_path": "package.json",
+      "title": "npm run lint ist tot, die ESLint-9-Flat-Config fehlt",
+      "description": "Vorbestehender Zustand, im Wochen-Review beobachtet. Ohne funktionierenden Lint-Lauf faellt eine Qualitaetsstufe still aus, und die 5 offenen Dependabot-PRs seit dem 29.05. koennen nicht sauber verifiziert werden.",
+      "evidence": "Beobachtung aus dem Wochen-Review 2026-07-09 (Projekt-Review avem-tasks).",
+      "recommendation": "eslint.config.mjs analog pact-app anlegen (dort per PR #93/#94 gelandet).",
+      "confidence": "medium",
+      "estimated_effort": "low",
+      "fingerprint": "f3869413dfa99230dbbb537e61b45d391938d88c4ebbd5cd9116b841ec4c2642"
+    }
+  ]
+}
