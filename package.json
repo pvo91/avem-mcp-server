@@ -23,7 +23,7 @@
     "@cloudflare/workers-types": "5.20260911.1",
     "@types/node": "22.10.10",
     "@typescript-eslint/eslint-plugin": "8.69.0",
-    "@typescript-eslint/parser": "8.69.0",
+    "@typescript-eslint/parser": "8.70.0",
     "eslint": "10.9.1",
     "prettier": "3.9.6",
     "typescript": "5.7.3",
