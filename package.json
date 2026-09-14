@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "8.69.0",
     "eslint": "10.9.1",
     "prettier": "3.9.6",
-    "typescript": "5.7.3",
+    "typescript": "5.9.3",
     "vitest": "4.1.11",
     "wrangler": "4.131.2"
   },
