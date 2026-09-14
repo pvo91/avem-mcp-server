@@ -6,7 +6,7 @@ Cloudflare Worker (hono) hinter `https://mcp.avemhq.com`, MCP-Server für Avem-W
 
 - **wrangler und `@cloudflare/workers-types` immer zusammen bumpen.** `wrangler` deklariert `@cloudflare/workers-types` als `peerOptional` mit einem Mindestdatum (z.B. `^5.20260910.1`); ein Einzel-Bump von wrangler bricht mit ERESOLVE ab. Beide in einem Aufruf: `npm install --save-exact wrangler@<X> @cloudflare/workers-types@<Y>`. Zweimal bezahlt (17.08.2026, Finding `bd99d6071105`; 11.09.2026, Dispatcher-Lauf), deshalb steht es hier.
 - Exakte Pins (`save-exact=true`), kein `--force`, kein `--legacy-peer-deps`.
-- **Major-Bumps nur mit Patric:** `typescript` 7, `zod` 4 (Laufzeit-Schemas), `vitest` 5. Dependabot öffnet dafür PRs, sie bleiben offen bis zum Entscheid.
+- **Major-Bumps nur mit Patric:** `typescript` 7, `zod` 4 (Laufzeit-Schemas), `vitest` 5. Seit 14.09.2026 stehen die drei in `.github/dependabot.yml` auf `ignore` für Majors (Security-Updates kommen weiterhin als PR); ein Major-Bump ist ein bewusster eigener PR, zod 4 mit Schema-Tests.
 
 ## Gate vor jedem Commit
 

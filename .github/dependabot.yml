@@ -19,6 +19,16 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "wrangler"
         update-types: ["version-update:semver-major"]
+      # Parked majors (Patric, 2026-09-14): zod 4 rewrites the runtime
+      # schemas and gets its own PR with schema tests; typescript 7 and
+      # vitest 5 wait for a concrete reason. `ignore` only silences
+      # version updates, security updates still open PRs.
+      - dependency-name: "zod"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "vitest"
+        update-types: ["version-update:semver-major"]
   # GitHub Actions (if/when workflows are added).
   - package-ecosystem: "github-actions"
     directory: "/"
