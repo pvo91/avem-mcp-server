@@ -1,6 +1,6 @@
 # avem-mcp-server
 
-Cloudflare Worker (hono) hinter `https://mcp.avemhq.com`, MCP-Server für Avem-Werkzeuge. Runtime-Abhängigkeiten sind `hono`, `@modelcontextprotocol/sdk` und `zod`; alles andere ist Dev-Tooling und landet nie im Worker-Bundle.
+Cloudflare Worker (hono) hinter `https://mcp.avemhq.com`, MCP-Server für Avem-Werkzeuge. Runtime-Abhängigkeiten sind `hono` und `zod` (das MCP-Protokoll spricht der eigene JSON-RPC-Handler `src/lib/json-rpc.ts`, die SDK ist seit 07.10.2026 entfernt); alles andere ist Dev-Tooling und landet nie im Worker-Bundle.
 
 ## Abhängigkeiten pflegen
 
@@ -18,7 +18,7 @@ npm run typecheck && npm run lint && npm test
 
 ## Nach einem Runtime-Bump: Deploy ist Teil des Fixes
 
-Ein gemergter `hono`-, SDK- oder `zod`-Bump ist erst geschlossen, wenn der Worker neu deployt ist. `npm run deploy:production` braucht Patrics wrangler-OAuth-Login (Patric führt aus). Nachweis: `curl -sI https://mcp.avemhq.com` liefert HTTP 200, Version und Datum in `.claude/findings/resolved/0b55d38bc2a5.md` nachtragen (gelebte Praxis seit 04.09.2026).
+Ein gemergter `hono`- oder `zod`-Bump ist erst geschlossen, wenn der Worker neu deployt ist. `npm run deploy:production` braucht Patrics wrangler-OAuth-Login (Patric führt aus). Nachweis: `curl -sI https://mcp.avemhq.com` liefert HTTP 200, Version und Datum in `.claude/findings/resolved/0b55d38bc2a5.md` nachtragen (gelebte Praxis seit 04.09.2026).
 
 ## Findings
 

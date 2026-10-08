@@ -27,7 +27,7 @@ Ein [Model Context Protocol](https://modelcontextprotocol.io/) Server, der die A
 
 - **Runtime:** Cloudflare Workers (V8 Isolates, edge)
 - **Framework:** [Hono](https://hono.dev/) 4.12
-- **MCP SDK:** `@modelcontextprotocol/sdk@1.29.0` (pinned)
+- **MCP protocol:** own JSON-RPC handler (`src/lib/json-rpc.ts`), no `@modelcontextprotocol/sdk` dependency
 - **Transport:** Streamable HTTP (MCP-Spec-Default 2026)
 - **Validation:** Zod 3.25 (strict-parse pattern)
 - **Tests:** Vitest 4.1
