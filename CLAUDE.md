@@ -21,7 +21,7 @@ Die CI (`.github/workflows/ci.yml`) führt typecheck, lint und Tests aus, seit 0
 
 ## Nach einem Runtime-Bump: Deploy ist Teil des Fixes
 
-Ein gemergter `hono`- oder `zod`-Bump ist erst geschlossen, wenn der Worker neu deployt ist. `npm run deploy:production` braucht Patrics wrangler-OAuth-Login (Patric führt aus). Nachweis: `curl -sI https://mcp.avemhq.com` liefert HTTP 200, Version und Datum in `.claude/findings/resolved/0b55d38bc2a5.md` nachtragen (gelebte Praxis seit 04.09.2026).
+Ein gemergter `hono`- oder `zod`-Bump ist erst geschlossen, wenn der Worker neu deployt ist. `npm run deploy:production` braucht Patrics wrangler-OAuth-Login (Patric führt aus). Das Skript entfernt `CLOUDFLARE_API_TOKEN` aus der Umgebung: der global gesetzte Schlüssel überschattet sonst den OAuth-Login und wrangler scheitert an «Failed to automatically retrieve account IDs» (gemessen 08.10.2026, zweimal). Nachweis: `curl -sI https://mcp.avemhq.com` liefert HTTP 200, Version und Datum in `.claude/findings/resolved/0b55d38bc2a5.md` nachtragen (gelebte Praxis seit 04.09.2026).
 
 ## Findings
 
