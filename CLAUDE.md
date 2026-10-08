@@ -17,7 +17,7 @@ npm audit --audit-level=high    # Exit 0 erwartet
 npm run typecheck && npm run lint && npm test
 ```
 
-Die CI (`.github/workflows/ci.yml`) führt dieselben Schritte aus, seit 08.10.2026 auch `npm audit --audit-level=high`: eine neue high-Advisory, auch in der Dev-Kette, macht jeden PR rot, bis sie behoben ist.
+Die CI (`.github/workflows/ci.yml`) führt typecheck, lint und Tests aus, seit 08.10.2026 auch den Audit in zwei Stufen (Patric-Entscheid 08.10.2026, wie startup-finance-toolkit): `npm audit --omit=dev --audit-level=high` für die ausgelieferten Pakete und `npm audit --audit-level=critical` für alle. Eine high-Lücke nur in der Dev-Kette lässt die CI also grün, das lokale Gate oben fängt sie weiterhin. Die CI läuft nur bei PR-Änderungen und Pushes nach main, eine neu veröffentlichte Advisory färbt einen unveränderten PR erst beim nächsten Lauf.
 
 ## Nach einem Runtime-Bump: Deploy ist Teil des Fixes
 
