@@ -19,7 +19,7 @@
     "zod": "3.25.49"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20260911.1",
+    "@cloudflare/workers-types": "5.20261006.1",
     "@types/node": "22.10.10",
     "@typescript-eslint/eslint-plugin": "8.69.0",
     "@typescript-eslint/parser": "8.69.0",
@@ -27,9 +27,12 @@
     "prettier": "3.9.6",
     "typescript": "5.7.3",
     "vitest": "4.1.11",
-    "wrangler": "4.131.2"
+    "wrangler": "4.148.0"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "overrides": {
+    "sharp": "0.35.5"
   }
 }
