@@ -3,6 +3,11 @@
 # machine verdict, and "merge only on green CI" was an empty condition here.
 # Deliberately minimal: no wrangler deploy step (needs auth and does not belong
 # in a PR gate); prettier is not enforced (17 legacy files are non-conformant).
+# npm audit (added 2026-10-08): CLAUDE.md demands `npm audit --audit-level=high`
+# with exit 0 before every commit, but CI never checked it, so four high
+# advisories in the dev chain (wrangler > miniflare > undici, sharp) went
+# unnoticed after #36. Same gate as startup-finance-toolkit; it runs last so a
+# red audit still shows the typecheck, lint and test verdicts.
 name: CI
 
 on:
@@ -32,3 +37,4 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
+      - run: npm audit --audit-level=high
